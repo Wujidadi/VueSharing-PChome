@@ -1,0 +1,69 @@
+<?php
+
+namespace App\Controllers;
+
+use App\Handlers\Demo;
+use Libraries\Logger;
+
+/**
+ * Demo controller.
+ */
+class DemoController
+{
+    /**
+     * Instance of this class.
+     *
+     * @var self|null
+     */
+    protected static $_uniqueInstance = null;
+
+    /**
+     * Get the instance of this class.
+     * 
+     * @return self
+     */
+    public static function getInstance()
+    {
+        if (self::$_uniqueInstance == null) self::$_uniqueInstance = new self();
+        return self::$_uniqueInstance;
+    }
+
+    /**
+     * Constructor.
+     *
+     * @return void
+     */
+    protected function __construct() {}
+
+    /**
+     * Main demo method.
+     *
+     * @return void
+     */
+    public function main()
+    {
+        echo Demo::getInstance()->welcome('Tarascanta Welcome Page');
+    }
+
+    /**
+     * Main demo API method.
+     *
+     * @return void
+     */
+    public function api()
+    {
+        header('Content-Type: text/plain');
+
+        echo 'API';
+    }
+
+    /**
+     * Return message to the demo command line script under the "`bin`" directory.
+     *
+     * @return string
+     */
+    public function cmd()
+    {
+        return 'Demo command line';
+    }
+}

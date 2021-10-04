@@ -1,0 +1,17 @@
+@import '../_common';
+
+a {
+    &, &:visited {
+        color: dodgerblue;
+        text-decoration: none;
+    }
+    &:hover {
+        color: orange;
+    }
+}
+
+ul {
+    li {
+        line-height: 1.6666666667;
+    }
+}
