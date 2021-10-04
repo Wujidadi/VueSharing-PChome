@@ -85,4 +85,40 @@ class ExampleController
             'title' => '組件間通信' . WEBPAGE_TITLE_SUFFIX
         ]);
     }
+
+    /**
+     * 自訂元素示例頁
+     *
+     * @param  string|null  $option  Vue.js 編譯選項
+     * @return void
+     */
+    public function CustomElement($option = null)
+    {
+        switch ($option)
+        {
+            case 'custom':
+                view('Example.CustomElement.WithOption', [
+                    'title' => '在 Vue 中使用自訂元素（跳過組件解析）' . WEBPAGE_TITLE_SUFFIX
+                ]);
+                break;
+
+            case 'custom-and-properties':
+                view('Example.CustomElement.WithProperty', [
+                    'title' => '在 Vue 中使用自訂元素（傳遞 DOM 屬性）' . WEBPAGE_TITLE_SUFFIX
+                ]);
+                break;
+
+            case 'custom-built-with-vue':
+                view('Example.CustomElement.BuiltWithVue', [
+                    'title' => '使用 Vue 建構自訂元素' . WEBPAGE_TITLE_SUFFIX
+                ]);
+                break;
+
+            default:
+                view('Example.CustomElement.Index', [
+                    'title' => '在 Vue 中使用自訂元素（不跳過組件解析）' . WEBPAGE_TITLE_SUFFIX
+                ]);
+                break;
+        }
+    }
 }

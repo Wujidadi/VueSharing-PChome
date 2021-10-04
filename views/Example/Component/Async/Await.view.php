@@ -11,7 +11,7 @@
 </head>
 <body>
     <div id="app">
-        <async-example></async-example>
+        <async-example v-cloak></async-example>
     </div>
     <script src="/js/example/component/async/await.js"></script>
 </body>

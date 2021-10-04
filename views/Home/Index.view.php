@@ -10,12 +10,7 @@
 </head>
 <body>
     <div id="main-page">
-        <ul>
-            <sub-page-list v-for="subPage in subPages"
-                           v-bind:href="subPage.href"
-                           v-bind:text="subPage.text"
-            ></sub-page-list>
-        </ul>
+        <sub-page-group v-for="group in subPages" v-bind:group="group" v-cloak></sub-page-group>
     </div>
     <script src="/js/script.js"></script>
 </body>
