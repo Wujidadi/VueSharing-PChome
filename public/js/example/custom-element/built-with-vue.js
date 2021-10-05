@@ -1,17 +1,41 @@
 const vueApp = Vue.createApp({
     data() {
         return {
-            myEl: null
+            myEl: null,
+            tick: 0
         }
     },
-    mounted() {
-        this.$nextTick(() => {
+    methods: {
+        init() {
             this.myEl = document.querySelector('#my-el');
-            console.log(this.myEl);
+            // console.log(this.myEl);
+            this.tick = Math.floor((new Date().getTime() - this.getMidnight()) / 1000);
+            // console.log(this.tick);
+        },
+        getMidnight() {
+            const now = new Date(),
+                  year = now.getFullYear(),
+                  month = now.getMonth() + 1,
+                  day = now.getDate(),
+                  midnight = new Date(`${year}-${month}-${day} 00:00:00`).getTime();
+            return midnight;
+        },
+        overridePropertyCounter() {
+            this.myEl.counter = this.tick;
+        },
+        showCustomElementProperties() {
             console.log('%c自訂元素的屬性：', 'color: gold; font-size: 11pt;')
             console.log('%cel-name: ' + this.myEl.elName,  'color: lime; font-size: 9pt;');
             console.log('%cdomain: '  + this.myEl.domain,  'color: lime; font-size: 9pt;');
             console.log('%ccounter: ' + this.myEl.counter, 'color: lime; font-size: 9pt;');
+            console.log('%ccounter (attribute): ' + this.myEl.getAttribute('counter'), 'color: dodgerblue; font-size: 9pt;');
+        }
+    },
+    mounted() {
+        this.$nextTick(() => {
+            this.init();
+            this.overridePropertyCounter();
+            this.showCustomElementProperties();
         });
     }
 });
@@ -31,17 +55,41 @@ const myVueEl = Vue.defineCustomElement({
     ],
     data() {
         return {
-            myEl: null
+            myEl: null,
+            tick: 0
+        }
+    },
+    methods: {
+        init() {
+            this.myEl = document.querySelector('#my-el');
+            // console.log(this.myEl);
+            this.tick = Math.floor((new Date().getTime() - this.getMidnight()) / 1000);
+            // console.log(this.tick);
+        },
+        getMidnight() {
+            const now = new Date(),
+                  year = now.getFullYear(),
+                  month = now.getMonth() + 1,
+                  day = now.getDate(),
+                  midnight = new Date(`${year}-${month}-${day} 00:00:00`).getTime();
+            return midnight;
+        },
+        overridePropertyCounter() {
+            this.myEl.counter = this.tick;
+        },
+        showCustomElementProperties() {
+            console.log('%c自訂元素的屬性：', 'color: gold; font-size: 11pt;')
+            console.log('%cel-name: ' + this.myEl.elName,  'color: lime; font-size: 9pt;');
+            console.log('%cdomain: '  + this.myEl.domain,  'color: lime; font-size: 9pt;');
+            console.log('%ccounter: ' + this.myEl.counter, 'color: lime; font-size: 9pt;');
+            console.log('%ccounter (attribute): ' + this.myEl.getAttribute('counter'), 'color: dodgerblue; font-size: 9pt;');
         }
     },
     mounted() {
         // this.$nextTick(() => {
-        //     this.myEl = document.querySelector('#my-el');
-        //     console.log(this.myEl);
-        //     console.log('%c自訂元素的屬性：', 'color: gold; font-size: 11pt;')
-        //     console.log('%cel-name: ' + this.myEl.elName,  'color: lime; font-size: 9pt;');
-        //     console.log('%cdomain: '  + this.myEl.domain,  'color: lime; font-size: 9pt;');
-        //     console.log('%ccounter: ' + this.myEl.counter, 'color: lime; font-size: 9pt;');
+        //     this.init();
+        //     this.overridePropertyCounter();
+        //     this.showCustomElementProperties();
         // });
     }
 });
