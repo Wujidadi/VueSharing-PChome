@@ -20,7 +20,7 @@
 <body>
     <div id="app">
         <div v-cloak>
-            <my-vue-el>123</my-vue-el>
+            <my-vue-el id="my-el" el-name="custom" domain="vue-sharing" counter="1024"></my-vue-el>
 
             <p class="note">
                 <strong>附記：</strong><br>
