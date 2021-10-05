@@ -1,5 +1,9 @@
 @import '../_common';
 
+body {
+    margin: 20px;
+}
+
 a {
     &, &:visited {
         color: dodgerblue;

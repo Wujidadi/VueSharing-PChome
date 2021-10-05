@@ -28,7 +28,7 @@ const vueApp = Vue.createApp({
             console.log('%cel-name: ' + this.myEl.elName,  'color: lime; font-size: 9pt;');
             console.log('%cdomain: '  + this.myEl.domain,  'color: lime; font-size: 9pt;');
             console.log('%ccounter: ' + this.myEl.counter, 'color: lime; font-size: 9pt;');
-            console.log('%ccounter (attribute): ' + this.myEl.getAttribute('counter'), 'color: dodgerblue; font-size: 9pt;');
+            console.log('%ccounter (attribute): ' + this.myEl.getAttribute('counter'), 'color: lightskyblue; font-size: 9pt;');
         }
     },
     mounted() {
@@ -82,7 +82,7 @@ const myVueEl = Vue.defineCustomElement({
             console.log('%cel-name: ' + this.myEl.elName,  'color: lime; font-size: 9pt;');
             console.log('%cdomain: '  + this.myEl.domain,  'color: lime; font-size: 9pt;');
             console.log('%ccounter: ' + this.myEl.counter, 'color: lime; font-size: 9pt;');
-            console.log('%ccounter (attribute): ' + this.myEl.getAttribute('counter'), 'color: dodgerblue; font-size: 9pt;');
+            console.log('%ccounter (attribute): ' + this.myEl.getAttribute('counter'), 'color: lightskyblue; font-size: 9pt;');
         }
     },
     mounted() {

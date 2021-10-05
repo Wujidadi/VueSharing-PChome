@@ -57,3 +57,48 @@ $Route->map('GET', '/example/custom-element-with-options-and-properties', functi
 $Route->map('GET', '/example/custom-element-built-with-vue', function() {
     ExampleController::getInstance()->CustomElement('custom-built-with-vue');
 });
+
+# 獨立的響應式值 - ref
+$Route->map('GET', '/example/reactivity/ref', function() {
+    ExampleController::getInstance()->Ref();
+});
+
+# 存取響應式物件
+$Route->map('GET', '/example/reactivity/access-in-ref', function() {
+    ExampleController::getInstance()->AccessInRef();
+});
+
+# 響應式狀態解構
+$Route->map('GET', '/example/reactivity/destructuring-reactive-state', function() {
+    ExampleController::getInstance()->DestructuringReactiveState();
+});
+
+# 防止更改響應式物件
+$Route->map('GET', '/example/reactivity/prevent-mutating-reactive-objects', function() {
+    ExampleController::getInstance()->PreventMutatingReactiveObjects();
+});
+
+# 響應式計算和監聽 - 計算值
+$Route->map('GET', '/example/computed', function() {
+    ExampleController::getInstance()->Computed();
+});
+
+# 響應式計算和監聽 - watchEffect
+$Route->map('GET', '/example/watchEffect', function() {
+    ExampleController::getInstance()->WatchEffect();
+});
+
+# 響應式計算和監聽 - watchEffect
+$Route->map('GET', '/example/watchEffect/effect-flush-timing', function() {
+    ExampleController::getInstance()->EffectFlushTiming();
+});
+
+# 響應式計算和監聽 - watch - 監聽單個資料來源
+$Route->map('GET', '/example/watch/single', function() {
+    ExampleController::getInstance()->WatchSingle();
+});
+
+# 響應式計算和監聽 - watch - 監聽單個資料來源
+$Route->map('GET', '/example/watch/multiple', function() {
+    ExampleController::getInstance()->WatchMultiple();
+});

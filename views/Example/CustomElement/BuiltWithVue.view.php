@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title; ?></title>
-    <script src="/libraries/Vue.js/vue.global.js"></script>
+    <script src="/libraries/Vue.js/vue.global.prod.js"></script>
     <link rel="stylesheet" href="/css/common.css">
     <style>
         p.note {
