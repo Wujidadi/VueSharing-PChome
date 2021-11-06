@@ -14,7 +14,16 @@ const asyncComp = defineAsyncComponent({
     loader: async () => {
         let res = await axios.get('/sample/tpl');
         return {
-            template: res.data
+            template: res.data,
+            props: [ 'vvv' ],
+            data() {
+                return {
+                    vov: ' geng'
+                };
+            },
+            mounted() {
+                console.log(this.vvv);
+            }
         };
     },
     delay: 200,

@@ -71,7 +71,7 @@ class ExampleController
     public function SampleTemplate()
     {
         header('Content-Type: text/html');
-        echo '<div>I am async!!!!</div>';
+        echo '<div>I am async!!!!{{ vvv }}</div>';
     }
 
     /**
